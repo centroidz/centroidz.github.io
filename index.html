@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,7 @@
     <link rel="icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
+
     <style>
         :root {
             --mi-orange: #FF6700;
@@ -17,14 +18,14 @@
             --text-light: #FFFFFF;
             --text-gray: #B0B0B0;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
         }
-        
+
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
@@ -33,18 +34,33 @@
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
+            opacity: 0.93;
         }
 
-        main, section, header, footer {
+        .main-container {
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main,
+        section,
+        header,
+        footer {
             overflow-x: hidden;
         }
 
-        .nav-link{
+        header {
+            opacity: 1;
+        }
+
+        .nav-link {
             color: var(--text-gray);
             font-size: 1.2rem;
             font-weight: 500;
         }
-        
+
         .nav-link:hover {
             font-size: 1.3rem;
             font-weight: 550;
@@ -70,7 +86,7 @@
             z-index: 1000;
             display: none;
         }
-        
+
         .product-hero {
             max-width: 1200px;
             width: 90%;
@@ -82,12 +98,12 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             position: relative;
         }
-        
+
         .product-header {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .product-title {
             font-size: 3rem;
             font-weight: 700;
@@ -97,13 +113,13 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .product-tagline {
             font-size: 1.2rem;
             color: var(--text-gray);
             margin-bottom: 1.5rem;
         }
-        
+
         .preorder-btn {
             background: linear-gradient(135deg, #FF6700, #FF9D00);
             color: white;
@@ -116,19 +132,19 @@
             transition: transform 0.3s, box-shadow 0.3s;
             margin-top: 1rem;
         }
-        
+
         .preorder-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(255, 103, 0, 0.3);
         }
-        
+
         .product-highlights {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             margin-top: 4rem;
         }
-        
+
         .highlight-card {
             flex: 1 1 300px;
             background-color: var(--card-bg);
@@ -137,44 +153,52 @@
             transition: transform 0.3s;
             color: white;
         }
-        
+
         .highlight-card:hover {
             transform: translateY(-10px);
         }
-        
+
         .highlight-icon {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             color: var(--mi-orange);
         }
-        
+
         .highlight-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        
+
         .highlight-desc {
             color: var(--text-gray);
             line-height: 1.6;
         }
-        
+
         .product-image-container {
             position: relative;
             margin: 3rem auto;
             max-width: 800px;
             text-align: center;
         }
-        
+
         .product-image {
             width: 35%;
             filter: drop-shadow(0 20px 30px rgba(255, 103, 0, 0.2));
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
         }
 
         /* Shop Grid Styles */
@@ -219,97 +243,97 @@
         }
 
         .grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
 
-        @media screen and (max-width: 1324px) {
-            grid-template-columns: repeat(4, 1fr);
+            @media screen and (max-width: 1324px) {
+                grid-template-columns: repeat(4, 1fr);
 
-        .card{
-            margin: 2px;
-            width: 98%;
-        }
-        
-        .card img {
-            width: 100%;
-            border-radius: 5px;
-            object-fit: cover;
+                .card {
+                    margin: 2px;
+                    width: 98%;
+                }
+
+                .card img {
+                    width: 100%;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+
+                .card span {
+                    text-align: center;
+                    margin: 10px 0;
+                    font-weight: bold;
+                    font-size: 0.95em;
+                }
+
+                .card p {
+                    text-align: center;
+                    font-size: 0.8em;
+                    color: #555;
+                }
+
             }
-           
-        .card span {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-            font-size: 0.95em;
-        }
 
-        .card p {
-            text-align: center;
-            font-size: 0.8em;
-            color: #555;
-        }
-            
-        }
+            @media screen and (max-width: 1000px) {
+                grid-template-columns: repeat(3, 1fr);
 
-        @media screen and (max-width: 1000px) {
-            grid-template-columns: repeat(3, 1fr);
+                .card {
+                    margin: 2px;
+                    width: 98%;
+                }
 
-        .card{
-            margin: 2px;
-            width: 98%;
-        }
-        
-        .card img {
-            width: 100%;
-            border-radius: 5px;
-            object-fit: cover;
+                .card img {
+                    width: 100%;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+
+                .card span {
+                    text-align: center;
+                    margin: 10px 0;
+                    font-weight: bold;
+                    font-size: 0.95em;
+                }
+
+                .card p {
+                    text-align: center;
+                    font-size: 0.8em;
+                    color: #555;
+                }
+
             }
-           
-        .card span {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-            font-size: 0.95em;
-        }
 
-        .card p {
-            text-align: center;
-            font-size: 0.8em;
-            color: #555;
-        }
-            
-        }
+            @media screen and (max-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
 
-        @media screen and (max-width: 768px) {
-            grid-template-columns: repeat(2, 1fr);
+                .card {
+                    margin: 2px;
+                    width: 98%;
+                }
 
-        .card{
-            margin: 2px;
-            width: 98%;
-        }
-        
-        .card img {
-            width: 100%;
-            border-radius: 5px;
-            object-fit: cover;
+                .card img {
+                    width: 100%;
+                    border-radius: 5px;
+                    object-fit: cover;
+                }
+
+                .card span {
+                    text-align: center;
+                    margin: 10px 0;
+                    font-weight: bold;
+                    font-size: 0.95em;
+                }
+
+                .card p {
+                    text-align: center;
+                    font-size: 0.8em;
+                    color: #555;
+                }
+
+
             }
-           
-        .card span {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-            font-size: 0.95em;
         }
-
-        .card p {
-            text-align: center;
-            font-size: 0.8em;
-            color: #555;
-        }
-
-            
-        }   
-      }
 
         .button-buy {
             background: linear-gradient(135deg, #FF6700, #FF9D00);
@@ -323,7 +347,8 @@
             transition: transform 0.3s;
             display: block;
             width: 80%;
-            margin: 15px auto 5px;;
+            margin: 15px auto 5px;
+            ;
         }
 
         .button-buy:hover {
@@ -343,7 +368,7 @@
             width: 100%;
             max-height: fit-content;
             aspect-ratio: 16 / 9;
-            height: 83vh;
+            height: 85vh;
         }
 
         /* Featured Section */
@@ -361,6 +386,7 @@
             .banner {
                 height: 40vh;
             }
+
             .featured {
                 margin: 0;
                 padding: 15px;
@@ -371,15 +397,17 @@
             .banner {
                 height: 30vh;
             }
+
             .featured {
                 margin: 0;
                 padding: 10px;
             }
+
             .featured h1 {
                 font-size: 1.5rem;
             }
         }
-        
+
         .banner-button {
             position: absolute;
             border-radius: 25%;
@@ -432,17 +460,17 @@
 
         /* Responsive Adjustments */
         @media (max-width: 1024px) {
-            
+
             .nav-link:hover {
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
+                border: none;
+                font-size: 1rem;
+                font-weight: bold;
             }
 
             .container {
                 width: 100%;
             }
-            
+
             .product-title {
                 font-size: 2.5rem;
             }
@@ -451,24 +479,24 @@
         @media (max-width: 768px) {
 
             .nav-link:hover {
-            border: none;
-            font-size: 1rem;
-            font-weight: bold;
+                border: none;
+                font-size: 1rem;
+                font-weight: bold;
             }
 
             .container {
                 width: 100%;
                 padding: 2px;
             }
-            
+
             .product-hero {
                 padding: 1.5rem;
             }
-            
+
             .product-title {
                 font-size: 2rem;
             }
-            
+
             .highlight-card {
                 flex: 1 1 100%;
             }
@@ -484,11 +512,11 @@
                 padding: 10px 12px;
                 font-size: 0.9rem;
             }
-            
+
             .product-title {
                 font-size: 1.8rem;
             }
-            
+
             .product-tagline {
                 font-size: 1rem;
             }
@@ -498,7 +526,7 @@
             }
         }
 
-    
+
         .footer {
             background-color: #222;
             color: #eee;
@@ -528,15 +556,20 @@
                 color: var(--mi-orange);
             }
 
-            .footer-about, .footer-contact, .footer-follow {
+            .footer-about,
+            .footer-contact,
+            .footer-follow {
                 padding: 20px;
             }
 
             @media screen and (max-width: 768px) {
-                .footer-about, .footer-contact, .footer-follow {
+
+                .footer-about,
+                .footer-contact,
+                .footer-follow {
                     display: block;
                 }
-                
+
             }
         }
 
@@ -551,13 +584,14 @@
             justify-content: center;
             margin-top: 20px;
         }
-        
+
         .footer-form input[type="email"] {
             padding: 10px;
             border: none;
             border-radius: 5px;
             margin-right: 10px;
             width: 80%;
+
             @media screen and (max-width: 1000px) and (min-width: 769px) {
                 height: 25px;
                 font-size: 0.8rem;
@@ -573,28 +607,30 @@
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
+
             @media screen and (max-width: 1000px) and (min-width: 769px) {
                 height: 25px;
                 font-size: 0.8rem;
                 padding: 5px 5px;
             }
         }
-        
     </style>
 </head>
+
 <body>
     <main id="mainContent">
         <header>
-            <nav class="navbar navbar-expand-lg container-nav bg-dark navbar-dark"> 
+            <nav class="navbar navbar-expand-lg container-nav bg-dark navbar-dark">
                 <div class="container-fluid">
-                    <span class="navbar-brand"><img src="images/logo.png" alt="Logo" width="50" height="50"> <span class="text-white">Xiaomi</span> </span>
+                    <span class="navbar-brand"><img src="images/logo.png" alt="Logo" width="50" height="50"> <span
+                            class="text-white">Xiaomi</span> </span>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNav">
                         <ul class="navbar-nav ms-auto">
                             <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#shop">Shop</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#shop">Products</a></li>
                             <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
                             <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
                         </ul>
@@ -602,7 +638,7 @@
                 </div>
             </nav>
         </header>
-        
+
         <div class="banner-container">
             <button id="prevBanner" class="banner-button">&lt;</button>
             <img class="banner" id="bannerImage" src="images/banner/xiaomi-15.jpg" alt="Xiaomi Products">
@@ -612,10 +648,11 @@
         <div class="featured">
             <h1>Featured Products</h1>
         </div>
-        
-        <div class="container">
-            <div class="grid" id="shop">
-                <!-- Products will be dynamically inserted here by shop.js -->
+        <div class="main-container">
+            <div class="container">
+                <div class="grid" id="shop">
+                    <!-- Products will be dynamically inserted here by shop.js -->
+                </div>
             </div>
         </div>
     </main>
@@ -629,11 +666,11 @@
                 <p class="product-tagline">Product Description</p>
                 <button class="preorder-btn">Buy Now</button>
             </div>
-            
+
             <div class="product-image-container">
                 <img class="product-image" src="" alt="Product Image">
             </div>
-            
+
             <div class="product-highlights">
                 <!-- Highlights will be dynamically inserted here by shop.js -->
             </div>
@@ -644,10 +681,14 @@
         <div class="container row border-bottom footer-about">
             <div class="col-md-4 footer-about" id="about">
                 <h5>About Us</h5>
-                <p>We were founded in April 2010 as a consumer electronics and smart manufacturing company with smartphones and smart hardware connected by an IoT platform at its core..</p>
-                <br><h5>Our Mission</h5>
-                <p>Build amazing products with honest prices to let everyone in the world enjoy a better life through innovative technology.</p>
-                <br><h5>Our Vision</h5>
+                <p>We were founded in April 2010 as a consumer electronics and smart manufacturing company with
+                    smartphones and smart hardware connected by an IoT platform at its core..</p>
+                <br>
+                <h5>Our Mission</h5>
+                <p>Build amazing products with honest prices to let everyone in the world enjoy a better life through
+                    innovative technology.</p>
+                <br>
+                <h5>Our Vision</h5>
                 <p>Make friends with users and be the coolest company in the users' hearts.</p>
             </div>
             <div class="col-md-4 footer-contact" id="contact">
@@ -662,10 +703,14 @@
                 <h5>Follow Us</h5>
                 <p>Stay connected with us on social media for the latest updates.</p>
                 <ul class="social-media">
-                    <li><a href="https://www.instagram.com/xiaomi.philippines/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                    <li><a href="https://twitter.com/Xiaomi_PH" target="_blank"><i class="fa-brands fa-twitter"></i></a></li>
-                    <li><a href="https://www.instagram.com/xiaomi.philippines/" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
-                    <li><a href="https://www.facebook.com/XiaomiPhilippines" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+                    <li><a href="https://www.instagram.com/xiaomi.philippines/" target="_blank"><i
+                                class="fa-brands fa-instagram"></i></a></li>
+                    <li><a href="https://twitter.com/Xiaomi_PH" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.instagram.com/xiaomi.philippines/" target="_blank"><i
+                                class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="https://www.facebook.com/XiaomiPhilippines" target="_blank"><i
+                                class="fa-brands fa-facebook"></i></a></li>
                 </ul>
                 <form class="footer-form">
                     <input type="email" placeholder="Subscribe to our newsletter" required>
@@ -674,15 +719,15 @@
             </div>
         </div>
         <div class="row text-center" style="margin-top: 20px;">
-        <p>&copy; 2025 Xiaomi Store. All rights reserved.</p>
-        <p>Designed by JRSENOBIO</p>
+            <p>&copy; 2025 Xiaomi Store. All rights reserved.</p>
+            <p>Designed by JRSENOBIO</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         // Banner Slider Functionality
-        document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function () {
             const banners = [
                 "images/banner/xiaomi-15.jpg",
                 "images/banner/xiaomi-pad-7-1.jpg",
@@ -696,19 +741,19 @@
             bannerImage.src = banners[currentBannerIndex];
 
             // Previous button functionality
-            document.getElementById("prevBanner").addEventListener("click", function() {
+            document.getElementById("prevBanner").addEventListener("click", function () {
                 currentBannerIndex = (currentBannerIndex - 1 + banners.length) % banners.length;
                 bannerImage.src = banners[currentBannerIndex];
             });
 
             // Next button functionality
-            document.getElementById("nextBanner").addEventListener("click", function() {
+            document.getElementById("nextBanner").addEventListener("click", function () {
                 currentBannerIndex = (currentBannerIndex + 1) % banners.length;
                 bannerImage.src = banners[currentBannerIndex];
             });
 
             // Auto-rotate banners every 5 seconds
-            setInterval(function() {
+            setInterval(function () {
                 currentBannerIndex = (currentBannerIndex + 1) % banners.length;
                 bannerImage.src = banners[currentBannerIndex];
             }, 5000);
@@ -723,9 +768,9 @@
             const modalContent = productModal.querySelector(".product-hero");
 
             const products = [
-                { 
-                    name: "Xiaomi 15", 
-                    price: "PHP 49,999", 
+                {
+                    name: "Xiaomi 15",
+                    price: "PHP 49,999",
                     image: "images/xiaomi-15.jpg",
                     description: "The Future of Performance, Redefined",
                     highlights: [
@@ -746,214 +791,213 @@
                         }
                     ]
                 },
-                { 
-            name: "Xiaomi Redmi A5 4G", 
-            price: "PHP 4,999", 
-            image: "images/xiaomi-redmi-a5-4g.jpg",
-            description: "Essential Performance at an Unbeatable Price",
-            highlights: [
                 {
-                    icon: "📱",
-                    title: "6.5\" HD+ Display",
-                    desc: "Large screen with 90Hz refresh rate for smooth scrolling."
+                    name: "Xiaomi Redmi A5 4G",
+                    price: "PHP 4,999",
+                    image: "images/xiaomi-redmi-a5-4g.jpg",
+                    description: "Essential Performance at an Unbeatable Price",
+                    highlights: [
+                        {
+                            icon: "📱",
+                            title: "6.5\" HD+ Display",
+                            desc: "Large screen with 90Hz refresh rate for smooth scrolling."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "5000mAh Battery",
+                            desc: "All-day battery life with 18W fast charging support."
+                        },
+                        {
+                            icon: "📸",
+                            title: "13MP Dual Camera",
+                            desc: "Capture clear photos with AI-enhanced imaging."
+                        }
+                    ]
                 },
                 {
-                    icon: "🔋",
-                    title: "5000mAh Battery",
-                    desc: "All-day battery life with 18W fast charging support."
+                    name: "Xiaomi Redmi Note 14S",
+                    price: "PHP 11,999",
+                    image: "images/xiaomi-redmi-note-14s.jpg",
+                    description: "Mid-range Powerhouse with Premium Features",
+                    highlights: [
+                        {
+                            icon: "🚀",
+                            title: "Dimensity 7050",
+                            desc: "Powerful 6nm chipset for smooth multitasking and gaming."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "67W Fast Charging",
+                            desc: "5000mAh battery charges to 100% in just 42 minutes."
+                        },
+                        {
+                            icon: "📷",
+                            title: "108MP Pro-Grade Camera",
+                            desc: "Triple camera system with ultra-wide and macro lenses."
+                        }
+                    ]
                 },
                 {
-                    icon: "📸",
-                    title: "13MP Dual Camera",
-                    desc: "Capture clear photos with AI-enhanced imaging."
+                    name: "Xiaomi Poco M7",
+                    price: "PHP 6,999",
+                    image: "images/xiaomi-poco-m7-5g.jpg",
+                    description: "5G Connectivity at an Affordable Price",
+                    highlights: [
+                        {
+                            icon: "📶",
+                            title: "5G Ready",
+                            desc: "Future-proof connectivity with next-gen network support."
+                        },
+                        {
+                            icon: "🖥️",
+                            title: "90Hz AMOLED Display",
+                            desc: "Vibrant colors and smooth visuals for media consumption."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "33W Fast Charging",
+                            desc: "5000mAh battery with quick recharge capability."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Pad 7",
+                    price: "PHP 23,999",
+                    image: "images/xiaomi-pad-7-pro.jpg",
+                    description: "Premium Tablet for Work and Play",
+                    highlights: [
+                        {
+                            icon: "🖥️",
+                            title: "11\" 2.8K Display",
+                            desc: "144Hz refresh rate with Dolby Vision support."
+                        },
+                        {
+                            icon: "✏️",
+                            title: "Xiaomi Smart Pen",
+                            desc: "Low latency stylus for precise note-taking and drawing."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "All-Day Battery",
+                            desc: "10000mAh battery with 67W fast charging."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Poco F7 PRO",
+                    price: "PHP 27,999",
+                    image: "images/xiaomi-poco-f7-pro.jpg",
+                    description: "Flagship Killer with Pro Performance",
+                    highlights: [
+                        {
+                            icon: "⚡",
+                            title: "Snapdragon 8+ Gen 1",
+                            desc: "Powerful flagship processor for elite performance."
+                        },
+                        {
+                            icon: "📷",
+                            title: "200MP Pro Camera",
+                            desc: "Advanced imaging system with OIS and 8K video."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "120W HyperCharge",
+                            desc: "Fully charges in just 19 minutes (4600mAh battery)."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Poco F7 ULTRA",
+                    price: "PHP 39,999",
+                    image: "images/xiaomi-poco-f7-ultra.jpg",
+                    description: "Ultimate Performance Without Compromise",
+                    highlights: [
+                        {
+                            icon: "🚀",
+                            title: "Snapdragon 8 Gen 2",
+                            desc: "Top-tier chipset with liquid cooling technology."
+                        },
+                        {
+                            icon: "📷",
+                            title: "1-Inch Main Sensor",
+                            desc: "Professional-grade camera with Leica optics."
+                        },
+                        {
+                            icon: "🖥️",
+                            title: "LTPO 2K Display",
+                            desc: "6.73\" AMOLED with 1-120Hz adaptive refresh rate."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Poco X7",
+                    price: "PHP 14,999",
+                    image: "images/xiaomi-poco-x7.jpg",
+                    description: "Balanced Performance for Everyday Use",
+                    highlights: [
+                        {
+                            icon: "⚡",
+                            title: "Dimensity 1080",
+                            desc: "Efficient 6nm processor with 5G connectivity."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "67W Fast Charging",
+                            desc: "5000mAh battery charges to 100% in 45 minutes."
+                        },
+                        {
+                            icon: "📷",
+                            title: "64MP OIS Camera",
+                            desc: "Triple camera system with optical image stabilization."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Poco X7 Pro",
+                    price: "PHP 17,999",
+                    image: "images/xiaomi-poco-x7-pro.jpg",
+                    description: "Premium Features at a Mid-Range Price",
+                    highlights: [
+                        {
+                            icon: "🚀",
+                            title: "Dimensity 7200 Ultra",
+                            desc: "4nm chipset with excellent power efficiency."
+                        },
+                        {
+                            icon: "🖥️",
+                            title: "120Hz AMOLED Display",
+                            desc: "6.67\" screen with Dolby Vision and HDR10+."
+                        },
+                        {
+                            icon: "📷",
+                            title: "200MP Main Camera",
+                            desc: "High-resolution sensor with advanced night mode."
+                        }
+                    ]
+                },
+                {
+                    name: "Xiaomi Mix Flip",
+                    price: "PHP 81,341.59",
+                    image: "images/xiaomi-mix-flip.jpg",
+                    description: "Unleash your creativity with the Xiaomi Mix Flip, featuring a Snapdragon 8 Gen 3 processor, a stunning Leica camera, and rapid 67W HyperCharge in a sleek foldable design.",
+                    highlights: [
+                        {
+                            icon: "⚡",
+                            title: "Snapdragon 8 Gen 3",
+                            desc: "4nm power-efficient mobile platform with up to 3.3GHz CPU for unmatched performance."
+                        },
+                        {
+                            icon: "🔋",
+                            title: "67W HyperCharge",
+                            desc: "4780mAh battery charges quickly, providing all-day power in just minutes."
+                        },
+                        {
+                            icon: "📸",
+                            title: "Leica Camera System",
+                            desc: "50MP main camera with advanced features for stunning photography and 8K video recording."
+                        }
+                    ]
                 }
-            ]
-        },
-        { 
-            name: "Xiaomi Redmi Note 14S", 
-            price: "PHP 11,999", 
-            image: "images/xiaomi-redmi-note-14s.jpg",
-            description: "Mid-range Powerhouse with Premium Features",
-            highlights: [
-                {
-                    icon: "🚀",
-                    title: "Dimensity 7050",
-                    desc: "Powerful 6nm chipset for smooth multitasking and gaming."
-                },
-                {
-                    icon: "🔋",
-                    title: "67W Fast Charging",
-                    desc: "5000mAh battery charges to 100% in just 42 minutes."
-                },
-                {
-                    icon: "📷",
-                    title: "108MP Pro-Grade Camera",
-                    desc: "Triple camera system with ultra-wide and macro lenses."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Poco M7", 
-            price: "PHP 6,999", 
-            image: "images/xiaomi-poco-m7-5g.jpg",
-            description: "5G Connectivity at an Affordable Price",
-            highlights: [
-                {
-                    icon: "📶",
-                    title: "5G Ready",
-                    desc: "Future-proof connectivity with next-gen network support."
-                },
-                {
-                    icon: "🖥️",
-                    title: "90Hz AMOLED Display",
-                    desc: "Vibrant colors and smooth visuals for media consumption."
-                },
-                {
-                    icon: "🔋",
-                    title: "33W Fast Charging",
-                    desc: "5000mAh battery with quick recharge capability."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Pad 7", 
-            price: "PHP 23,999", 
-            image: "images/xiaomi-pad-7-pro.jpg",
-            description: "Premium Tablet for Work and Play",
-            highlights: [
-                {
-                    icon: "🖥️",
-                    title: "11\" 2.8K Display",
-                    desc: "144Hz refresh rate with Dolby Vision support."
-                },
-                {
-                    icon: "✏️",
-                    title: "Xiaomi Smart Pen",
-                    desc: "Low latency stylus for precise note-taking and drawing."
-                },
-                {
-                    icon: "🔋",
-                    title: "All-Day Battery",
-                    desc: "10000mAh battery with 67W fast charging."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Poco F7 PRO", 
-            price: "PHP 27,999", 
-            image: "images/xiaomi-poco-f7-pro.jpg",
-            description: "Flagship Killer with Pro Performance",
-            highlights: [
-                {
-                    icon: "⚡",
-                    title: "Snapdragon 8+ Gen 1",
-                    desc: "Powerful flagship processor for elite performance."
-                },
-                {
-                    icon: "📷",
-                    title: "200MP Pro Camera",
-                    desc: "Advanced imaging system with OIS and 8K video."
-                },
-                {
-                    icon: "🔋",
-                    title: "120W HyperCharge",
-                    desc: "Fully charges in just 19 minutes (4600mAh battery)."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Poco F7 ULTRA", 
-            price: "PHP 39,999", 
-            image: "images/xiaomi-poco-f7-ultra.jpg",
-            description: "Ultimate Performance Without Compromise",
-            highlights: [
-                {
-                    icon: "🚀",
-                    title: "Snapdragon 8 Gen 2",
-                    desc: "Top-tier chipset with liquid cooling technology."
-                },
-                {
-                    icon: "📷",
-                    title: "1-Inch Main Sensor",
-                    desc: "Professional-grade camera with Leica optics."
-                },
-                {
-                    icon: "🖥️",
-                    title: "LTPO 2K Display",
-                    desc: "6.73\" AMOLED with 1-120Hz adaptive refresh rate."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Poco X7", 
-            price: "PHP 14,999", 
-            image: "images/xiaomi-poco-x7.jpg",
-            description: "Balanced Performance for Everyday Use",
-            highlights: [
-                {
-                    icon: "⚡",
-                    title: "Dimensity 1080",
-                    desc: "Efficient 6nm processor with 5G connectivity."
-                },
-                {
-                    icon: "🔋",
-                    title: "67W Fast Charging",
-                    desc: "5000mAh battery charges to 100% in 45 minutes."
-                },
-                {
-                    icon: "📷",
-                    title: "64MP OIS Camera",
-                    desc: "Triple camera system with optical image stabilization."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Poco X7 Pro", 
-            price: "PHP 17,999", 
-            image: "images/xiaomi-poco-x7-pro.jpg",
-            description: "Premium Features at a Mid-Range Price",
-            highlights: [
-                {
-                    icon: "🚀",
-                    title: "Dimensity 7200 Ultra",
-                    desc: "4nm chipset with excellent power efficiency."
-                },
-                {
-                    icon: "🖥️",
-                    title: "120Hz AMOLED Display",
-                    desc: "6.67\" screen with Dolby Vision and HDR10+."
-                },
-                {
-                    icon: "📷",
-                    title: "200MP Main Camera",
-                    desc: "High-resolution sensor with advanced night mode."
-                }
-            ]
-        },
-        { 
-            name: "Xiaomi Redmi Turbo4", 
-            price: "PHP 15,999", 
-            image: "images/xiaomi-redmi-turbo4.jpg",
-            description: "Speed and Performance Redefined",
-            highlights: [
-                {
-                    icon: "⚡",
-                    title: "Snapdragon 7+ Gen 2",
-                    desc: "Power-efficient yet powerful mid-range chipset."
-                },
-                {
-                    icon: "🔋",
-                    title: "90W Turbo Charging",
-                    desc: "5000mAh battery charges to 100% in 30 minutes."
-                },
-                {
-                    icon: "🎮",
-                    title: "Gaming Optimized",
-                    desc: "Vapor chamber cooling system for sustained performance."
-                }
-            ]
-        }
-                // ... (include all 10 products as shown in your shop.js)
             ];
 
             function generateShopItems() {
@@ -981,11 +1025,11 @@
                 modalContent.querySelector(".product-tagline").textContent = product.description;
                 modalContent.querySelector(".product-image").src = product.image;
                 modalContent.querySelector(".preorder-btn").textContent = `Buy Now - ${product.price}`;
-                
+
                 // Update highlights
                 const highlightsContainer = modalContent.querySelector(".product-highlights");
                 highlightsContainer.innerHTML = "";
-                
+
                 product.highlights.forEach(highlight => {
                     const highlightCard = document.createElement("div");
                     highlightCard.classList.add("highlight-card");
@@ -1031,4 +1075,5 @@
         });
     </script>
 </body>
+
 </html>
