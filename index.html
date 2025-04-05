@@ -9,612 +9,7 @@
     <link rel="icon" href="images/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
-    <style>
-        :root {
-            --mi-orange: #FF6700;
-            --dark-bg: #121212;
-            --card-bg: #1E1E1E;
-            --text-light: #FFFFFF;
-            --text-gray: #B0B0B0;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            background-image: url('images/bg.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            background-size: cover;
-            opacity: 0.93;
-        }
-
-        .main-container {
-            margin: auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        main,
-        section,
-        header,
-        footer {
-            overflow-x: hidden;
-        }
-
-        header {
-            opacity: 1;
-        }
-
-        .nav-link {
-            color: var(--text-gray);
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-
-        .nav-link:hover {
-            font-size: 1.3rem;
-            font-weight: 550;
-        }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--text-light) !important;
-        }
-
-        /* Product Modal Section */
-        .product-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            display: none;
-        }
-
-        .product-hero {
-            max-width: 1200px;
-            width: 90%;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2rem;
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-        }
-
-        .product-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .product-title {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(90deg, #FF6700, #FF9D00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .product-tagline {
-            font-size: 1.2rem;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .preorder-btn {
-            background: linear-gradient(135deg, #FF6700, #FF9D00);
-            color: white;
-            border: none;
-            padding: 12px 32px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            margin-top: 1rem;
-        }
-
-        .preorder-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 103, 0, 0.3);
-        }
-
-        .product-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .highlight-card {
-            flex: 1 1 300px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 2rem;
-            transition: transform 0.3s;
-            color: white;
-        }
-
-        .highlight-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .highlight-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: var(--mi-orange);
-        }
-
-        .highlight-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .highlight-desc {
-            color: var(--text-gray);
-            line-height: 1.6;
-        }
-
-        .product-image-container {
-            position: relative;
-            margin: 3rem auto;
-            max-width: 800px;
-            text-align: center;
-        }
-
-        .product-image {
-            width: 35%;
-            filter: drop-shadow(0 20px 30px rgba(255, 103, 0, 0.2));
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
-        }
-
-        /* Shop Grid Styles */
-        .container {
-            width: 80%;
-            overflow: hidden;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .card {
-            position: relative;
-            width: 98%;
-            background: #fff;
-            margin: 2px;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 5px;
-        }
-
-        .card span {
-            text-align: center;
-            margin: 10px 0;
-            font-weight: bold;
-        }
-
-        .card p {
-            text-align: center;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-
-            @media screen and (max-width: 1324px) {
-                grid-template-columns: repeat(4, 1fr);
-
-                .card {
-                    margin: 2px;
-                    width: 98%;
-                }
-
-                .card img {
-                    width: 100%;
-                    border-radius: 5px;
-                    object-fit: cover;
-                }
-
-                .card span {
-                    text-align: center;
-                    margin: 10px 0;
-                    font-weight: bold;
-                    font-size: 0.95em;
-                }
-
-                .card p {
-                    text-align: center;
-                    font-size: 0.8em;
-                    color: #555;
-                }
-
-            }
-
-            @media screen and (max-width: 1000px) {
-                grid-template-columns: repeat(3, 1fr);
-
-                .card {
-                    margin: 2px;
-                    width: 98%;
-                }
-
-                .card img {
-                    width: 100%;
-                    border-radius: 5px;
-                    object-fit: cover;
-                }
-
-                .card span {
-                    text-align: center;
-                    margin: 10px 0;
-                    font-weight: bold;
-                    font-size: 0.95em;
-                }
-
-                .card p {
-                    text-align: center;
-                    font-size: 0.8em;
-                    color: #555;
-                }
-
-            }
-
-            @media screen and (max-width: 768px) {
-                grid-template-columns: repeat(2, 1fr);
-
-                .card {
-                    margin: 2px;
-                    width: 98%;
-                }
-
-                .card img {
-                    width: 100%;
-                    border-radius: 5px;
-                    object-fit: cover;
-                }
-
-                .card span {
-                    text-align: center;
-                    margin: 10px 0;
-                    font-weight: bold;
-                    font-size: 0.95em;
-                }
-
-                .card p {
-                    text-align: center;
-                    font-size: 0.8em;
-                    color: #555;
-                }
-
-
-            }
-        }
-
-        .button-buy {
-            background: linear-gradient(135deg, #FF6700, #FF9D00);
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: transform 0.3s;
-            display: block;
-            width: 80%;
-            margin: 15px auto 5px;
-            ;
-        }
-
-        .button-buy:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Banner Styles */
-        .banner-container {
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .banner {
-            width: 100%;
-            max-height: fit-content;
-            aspect-ratio: 16 / 9;
-            height: 85vh;
-        }
-
-        /* Featured Section */
-        .featured {
-            background-color: #222;
-            color: #eee;
-            padding: 10px 15px;
-            margin: 1px 0 20px;
-            margin: 0;
-            text-align: center;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .banner {
-                height: 40vh;
-            }
-
-            .featured {
-                margin: 0;
-                padding: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .banner {
-                height: 30vh;
-            }
-
-            .featured {
-                margin: 0;
-                padding: 10px;
-            }
-
-            .featured h1 {
-                font-size: 1.5rem;
-            }
-        }
-
-        .banner-button {
-            position: absolute;
-            border-radius: 25%;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            width: 30px;
-            height: 50px;
-            cursor: pointer;
-            font-size: 18px;
-        }
-
-        #prevBanner {
-            left: 10px;
-        }
-
-        #nextBanner {
-            right: 10px;
-        }
-
-        /* Blur Effect */
-        .blur {
-            filter: blur(5px);
-            transition: filter 0.3s ease;
-        }
-
-        /* Close Button */
-        .close-modal-btn {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            top: 50px;
-            right: 20px;
-            background: transparent;
-            color: #333;
-            border: none;
-            font-size: 28px;
-            cursor: pointer;
-            height: 40px;
-            width: 40px;
-            z-index: 1001;
-        }
-
-        .close-modal-btn:hover {
-            color: red;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 1024px) {
-
-            .nav-link:hover {
-                border: none;
-                font-size: 1rem;
-                font-weight: bold;
-            }
-
-            .container {
-                width: 100%;
-            }
-
-            .product-title {
-                font-size: 2.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-
-            .nav-link:hover {
-                border: none;
-                font-size: 1rem;
-                font-weight: bold;
-            }
-
-            .container {
-                width: 100%;
-                padding: 2px;
-            }
-
-            .product-hero {
-                padding: 1.5rem;
-            }
-
-            .product-title {
-                font-size: 2rem;
-            }
-
-            .highlight-card {
-                flex: 1 1 100%;
-            }
-
-            .product-image {
-                width: 80%;
-            }
-
-        }
-
-        @media (max-width: 480px) {
-            nav ul li a {
-                padding: 10px 12px;
-                font-size: 0.9rem;
-            }
-
-            .product-title {
-                font-size: 1.8rem;
-            }
-
-            .product-tagline {
-                font-size: 1rem;
-            }
-
-            .product-image {
-                width: 80%;
-            }
-        }
-
-
-        .footer {
-            background-color: #222;
-            color: #eee;
-            padding: 20px 0;
-            text-align: justify;
-            position: relative;
-            width: 100%;
-            bottom: 0;
-            left: 0;
-            right: 0;
-
-            .social-media {
-                list-style: none;
-                padding: 0;
-                display: flex;
-                justify-content: center;
-                gap: 20px;
-            }
-
-            a {
-                color: #eee;
-                text-decoration: none;
-                font-size: 1.5rem;
-            }
-
-            a:hover {
-                color: var(--mi-orange);
-            }
-
-            .footer-about,
-            .footer-contact,
-            .footer-follow {
-                padding: 20px;
-            }
-
-            @media screen and (max-width: 768px) {
-
-                .footer-about,
-                .footer-contact,
-                .footer-follow {
-                    display: block;
-                }
-
-            }
-        }
-
-        .footer p {
-            margin: 0;
-            margin-top: 3px;
-            font-size: 1rem;
-        }
-
-        .footer-form {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
-
-        .footer-form input[type="email"] {
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            margin-right: 10px;
-            width: 80%;
-
-            @media screen and (max-width: 1000px) and (min-width: 769px) {
-                height: 25px;
-                font-size: 0.8rem;
-            }
-
-        }
-
-        .footer-form button {
-            background-color: var(--mi-orange);
-            color: white;
-            border: none;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-
-            @media screen and (max-width: 1000px) and (min-width: 769px) {
-                height: 25px;
-                font-size: 0.8rem;
-                padding: 5px 5px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -664,7 +59,7 @@
             <div class="product-header">
                 <h1 class="product-title">Product Name</h1>
                 <p class="product-tagline">Product Description</p>
-                <button class="preorder-btn">Buy Now</button>
+                <button class="preorder-btn">More info</button>
             </div>
 
             <div class="product-image-container">
@@ -773,6 +168,7 @@
                     price: "PHP 49,999",
                     image: "images/xiaomi-15.jpg",
                     description: "The Future of Performance, Redefined",
+                    page: "xiaomi-15.html",
                     highlights: [
                         {
                             icon: "⚡",
@@ -796,6 +192,7 @@
                     price: "PHP 4,999",
                     image: "images/xiaomi-redmi-a5-4g.jpg",
                     description: "Essential Performance at an Unbeatable Price",
+                    page: "xiaomi-redmi-a5-4g.html",
                     highlights: [
                         {
                             icon: "📱",
@@ -819,6 +216,7 @@
                     price: "PHP 11,999",
                     image: "images/xiaomi-redmi-note-14s.jpg",
                     description: "Mid-range Powerhouse with Premium Features",
+                    page: "xiaomi-redmi-note-14s.html",
                     highlights: [
                         {
                             icon: "🚀",
@@ -842,6 +240,7 @@
                     price: "PHP 6,999",
                     image: "images/xiaomi-poco-m7-5g.jpg",
                     description: "5G Connectivity at an Affordable Price",
+                    page: "xiaomi-poco-m7-5g.html",
                     highlights: [
                         {
                             icon: "📶",
@@ -865,6 +264,7 @@
                     price: "PHP 23,999",
                     image: "images/xiaomi-pad-7-pro.jpg",
                     description: "Premium Tablet for Work and Play",
+                    page: "xiaomi-pad-7-pro.html",
                     highlights: [
                         {
                             icon: "🖥️",
@@ -888,6 +288,7 @@
                     price: "PHP 27,999",
                     image: "images/xiaomi-poco-f7-pro.jpg",
                     description: "Flagship Killer with Pro Performance",
+                    page: "xiaomi-poco-f7-pro.html",
                     highlights: [
                         {
                             icon: "⚡",
@@ -911,6 +312,7 @@
                     price: "PHP 39,999",
                     image: "images/xiaomi-poco-f7-ultra.jpg",
                     description: "Ultimate Performance Without Compromise",
+                    page: "xiaomi-poco-f7-ultra.html",
                     highlights: [
                         {
                             icon: "🚀",
@@ -934,6 +336,7 @@
                     price: "PHP 14,999",
                     image: "images/xiaomi-poco-x7.jpg",
                     description: "Balanced Performance for Everyday Use",
+                    page: "xiaomi-poco-x7.html",
                     highlights: [
                         {
                             icon: "⚡",
@@ -957,6 +360,7 @@
                     price: "PHP 17,999",
                     image: "images/xiaomi-poco-x7-pro.jpg",
                     description: "Premium Features at a Mid-Range Price",
+                    page: "xiaomi-poco-x7-pro.html",
                     highlights: [
                         {
                             icon: "🚀",
@@ -980,6 +384,7 @@
                     price: "PHP 81,341.59",
                     image: "images/xiaomi-mix-flip.jpg",
                     description: "Unleash your creativity with the Xiaomi Mix Flip, featuring a Snapdragon 8 Gen 3 processor, a stunning Leica camera, and rapid 67W HyperCharge in a sleek foldable design.",
+                    page: "xiaomi-mix-flip.html",
                     highlights: [
                         {
                             icon: "⚡",
@@ -1024,7 +429,7 @@
                 modalContent.querySelector(".product-title").textContent = product.name;
                 modalContent.querySelector(".product-tagline").textContent = product.description;
                 modalContent.querySelector(".product-image").src = product.image;
-                modalContent.querySelector(".preorder-btn").textContent = `Buy Now - ${product.price}`;
+                modalContent.querySelector(".preorder-btn").textContent = "More Information"; // Change button text
 
                 // Update highlights
                 const highlightsContainer = modalContent.querySelector(".product-highlights");
@@ -1034,10 +439,10 @@
                     const highlightCard = document.createElement("div");
                     highlightCard.classList.add("highlight-card");
                     highlightCard.innerHTML = `
-                        <div class="highlight-icon">${highlight.icon}</div>
-                        <h3 class="highlight-title">${highlight.title}</h3>
-                        <p class="highlight-desc">${highlight.desc}</p>
-                    `;
+            <div class="highlight-icon">${highlight.icon}</div>
+            <h3 class="highlight-title">${highlight.title}</h3>
+            <p class="highlight-desc">${highlight.desc}</p>
+        `;
                     highlightsContainer.appendChild(highlightCard);
                 });
 
@@ -1045,8 +450,15 @@
                 productModal.style.display = "flex";
                 mainContent.classList.add("blur");
                 document.body.style.overflow = "hidden";
+
+                // Add event listener for the "More Information" button
+                const moreInfoButton = modalContent.querySelector(".preorder-btn");
+                moreInfoButton.onclick = () => {
+                    window.location.href = product.page; // Redirect to the specified page
+                };
             }
 
+            // Generate shop items
             generateShopItems();
 
             // Event delegation for dynamically added buttons

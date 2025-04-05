@@ -28,7 +28,7 @@ main, section, header, footer {
     overflow-x: hidden;
 }
 
-main, .main-container {
+.main-container {
     margin: auto;
     background-color: #fff;
     padding: 20px;
