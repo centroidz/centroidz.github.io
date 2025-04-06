@@ -415,7 +415,6 @@ grid-template-columns: repeat(5, 1fr);
     display: flex;
     align-items: center;
     top: 5px;
-    right: 5x;
     background: transparent;
     color: #333;
     border: none;
