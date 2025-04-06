@@ -1,5 +1,5 @@
- // subscription form functionality
- document.querySelector(".footer-form").addEventListener("submit", function (event) {
+// subscription form functionality
+document.querySelector(".footer-form").addEventListener("submit", function (event) {
     event.preventDefault(); // Prevent form submission
     const emailInput = this.querySelector("input[type='email']");
     const email = emailInput.value;
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 5000);
 });
 
-// Product Modal System (from shop.js)
+// Product Modal System Functionality
 document.addEventListener("DOMContentLoaded", () => {
     const shopContainer = document.getElementById("shop");
     const mainContent = document.getElementById("mainContent");
@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeModal = document.getElementById("closeModal");
     const modalContent = productModal.querySelector(".product-hero");
 
+    // Sample product data
     const products = [
         {
             name: "Xiaomi 15",
@@ -302,6 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
+    // Function to generate shop items
     function generateShopItems() {
         shopContainer.innerHTML = "";
         products.forEach(product => {
@@ -318,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    // Function to show product modal
     function showProductModal(productName) {
         const product = products.find(p => p.name === productName);
         if (!product) return;

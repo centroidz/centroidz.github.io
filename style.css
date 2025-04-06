@@ -16,13 +16,15 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    background-image: url('images/bg.jpg');
+    background-image: url('images/bg/dark.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
     opacity: 0.93;
 }
+
+/* Global Styles */
 
 main, section, header, footer {
     overflow-x: hidden;
@@ -178,12 +180,14 @@ header{
 }
 
 /* Shop Grid Styles */
+
 .container {
     width: 80%;
     overflow: hidden;
     margin: 0 auto;
     padding: 20px;
 }
+
 
 .card {
     position: relative;
@@ -499,6 +503,7 @@ grid-template-columns: repeat(5, 1fr);
     }
 }
 
+/* Footer Styles */
 
 .footer {
     background-color: #222;
