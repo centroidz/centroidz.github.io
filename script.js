@@ -312,7 +312,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img src="${product.image}" alt="${product.name}">
                 <span>${product.name}</span>
                 <p>Price: ${product.price}</p>
-                <button class="button-buy" data-product="${product.name}">View</button>
+                <button class="button-buy" data-product="${product.name}">Learn More</button>
             `;
             shopContainer.appendChild(card);
         });
