@@ -411,12 +411,11 @@ grid-template-columns: repeat(5, 1fr);
 
 /* Close Button */
 .close-modal-btn {
-    position: absolute;
-    border-radius: 50%;
+    position: fixed;
     display: flex;
     align-items: center;
-    top: 2px;
-    left: 8px;
+    top: 40px;
+    left: 40px;
     background: transparent;
     color: #333;
     border: none;
