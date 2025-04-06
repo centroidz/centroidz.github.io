@@ -533,6 +533,10 @@ grid-template-columns: repeat(5, 1fr);
         padding: 20px;
     }
 
+    .footer-contact a {
+        font-size: 1rem;
+    }
+
     @media screen and (max-width: 768px) {
         .footer-about, .footer-contact, .footer-follow {
             display: block;
