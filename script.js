@@ -7,7 +7,7 @@ document.querySelector(".footer-form").addEventListener("submit", function (even
         alertbox.render({
             alertIcon: 'success',
             title: 'Thank You!',
-            message: 'Subscription successful!',
+            message: '<strong>Welcome to the club</strong><br>You will receive the latest news and updates from us.',
             themeColor: '#FF6700',
             btnColor: '#FF6700',
             btnTitle: 'Ok', border: true
@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
-    // Function to generate shop items
+    // Function to generate items
     function generateShopItems() {
         shopContainer.innerHTML = "";
         products.forEach(product => {
