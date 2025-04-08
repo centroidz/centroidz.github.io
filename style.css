@@ -82,7 +82,8 @@ header{
     background-color: white;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    position: relative;
+    position: relative; /* Essential for absolute positioning of child elements */
+    margin: 40px auto; /* Give space for the close button */
 }
 
 .product-header {
@@ -415,24 +416,32 @@ grid-template-columns: repeat(5, 1fr);
 
 /* Close Button */
 .close-modal-btn {
-    position: fixed;
+    position: absolute;
     display: flex;
     align-items: center;
-    top: 40px;
-    left: 40px;
-    background: transparent;
-    color: #333;
-    border: none;
-    font-size: 28px;
+    justify-content: center;
+    top: 5px;        
+    left: 2px;      
+    background: #222;
+    color: #eee;
+    font-size: 20px;
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: none;
     z-index: 1001;
-    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    padding: 0;
+    line-height: 1;
 }
 
 .close-modal-btn:hover {
-    color: red;
+    color: white;
+    background: red;
+    border-color: red;
+    transform: scale(1.1);
 }
 
 /* Responsive Adjustments */
