@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class Schedule | IT Department</title>
+    <title>Class Schedule | 3CWMAD</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
     <style>
         :root {
@@ -140,9 +140,13 @@
             border-radius: 4px;
         }
         
-        .course-ITEP { background-color: #d4edff; color: #0056b3; }
-        .course-ITEL { background-color: #e2f3e4; color: #155724; }
-        .course-ITST { background-color: #fff3cd; color: #856404; }
+        /* Unique colors for each subject */
+        .ITEP-308 { background-color: #d4edff; color: #0056b3; }
+        .ITEP-309 { background-color: #cce7ff; color: #003d7a; }
+        .ITEP-310 { background-color: #e6f2ff; color: #00264d; }
+        .ITEL-304 { background-color: #e2f3e4; color: #155724; }
+        .ITST-301 { background-color: #fff3cd; color: #856404; }
+        .ITST-302 { background-color: #ffe8cc; color: #994d00; }
         
         .time-col {
             font-weight: 500;
@@ -198,22 +202,34 @@
     <div class="container">
         <header>
             <h1>Class Schedule</h1>
-            <p class="subtitle">Information Technology Department | Fall Semester 2023</p>
+            <p class="subtitle">Information Technology | 3CWMAD</p>
         </header>
         
         <div class="controls">
             <div class="legend">
                 <div class="legend-item">
-                    <div class="legend-color course-ITEP"></div>
-                    <span>ITEP Courses</span>
+                    <div class="legend-color ITEP-308"></div>
+                    <span>ITEP 308</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color course-ITEL"></div>
-                    <span>ITEL Courses</span>
+                    <div class="legend-color ITEP-309"></div>
+                    <span>ITEP 309</span>
                 </div>
                 <div class="legend-item">
-                    <div class="legend-color course-ITST"></div>
-                    <span>ITST Courses</span>
+                    <div class="legend-color ITEP-310"></div>
+                    <span>ITEP 310</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ITEL-304"></div>
+                    <span>ITEL 304</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ITST-301"></div>
+                    <span>ITST 301</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color ITST-302"></div>
+                    <span>ITST 302</span>
                 </div>
             </div>
             
@@ -240,36 +256,36 @@
                     <td class="time-col">8:00 - 9:00</td>
                     <td></td>
                     <td></td>
-                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td class="subject ITEP-308">ITEP 308</td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">9:00 - 10:00</td>
-                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td class="subject ITEP-309">ITEP 309</td>
                     <td></td>
-                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td class="subject ITEP-308">ITEP 308</td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">10:00 - 11:00</td>
-                    <td class="subject course-ITEL">ITEL 304</td>
-                    <td class="subject course-ITST">ITST 301</td>
-                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td class="subject ITEL-304">ITEL 304</td>
+                    <td class="subject ITST-301">ITST 301</td>
+                    <td class="subject ITEP-308">ITEP 308</td>
                     <td></td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">11:00 - 12:00</td>
-                    <td class="subject course-ITEP">ITEP 308</td>
-                    <td class="subject course-ITEP">ITEP 308</td>
-                    <td class="subject course-ITEL">ITEL 304</td>
+                    <td class="subject ITEP-308">ITEP 308</td>
+                    <td class="subject ITEP-308">ITEP 308</td>
+                    <td class="subject ITEL-304">ITEL 304</td>
                     <td></td>
-                    <td class="subject course-ITST">ITST 302</td>
+                    <td class="subject ITST-302">ITST 302</td>
                     <td></td>
                 </tr>
                 <tr>
@@ -278,44 +294,44 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="subject course-ITST">ITST 302</td>
+                    <td class="subject ITST-302">ITST 302</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">1:00 - 2:00</td>
-                    <td class="subject course-ITEP">ITEP 310</td>
-                    <td class="subject course-ITEL">ITEL 304</td>
+                    <td class="subject ITEP-310">ITEP 310</td>
+                    <td class="subject ITEL-304">ITEL 304</td>
                     <td></td>
                     <td></td>
-                    <td class="subject course-ITST">ITST 302</td>
+                    <td class="subject ITST-302">ITST 302</td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">2:00 - 3:00</td>
-                    <td class="subject course-ITST">ITST 301</td>
+                    <td class="subject ITST-301">ITST 301</td>
+                    <td class="subject ITEL-304">ITEL 304</td>
                     <td></td>
-                    <td></td>
-                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td class="subject ITEP-309">ITEP 309</td>
                     <td></td>
                     <td></td>
                 </tr>
                 <tr>
                     <td class="time-col">3:00 - 4:00</td>
                     <td></td>
-                    <td></td>
-                    <td class="subject course-ITST">ITST 302</td>
-                    <td class="subject course-ITST">ITST 302</td>
-                    <td class="subject course-ITST">ITST 301</td>
-                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td class="subject ITEL-304">ITEL 304</td>
+                    <td class="subject ITST-302">ITST 302</td>
+                    <td class="subject ITST-302">ITST 302</td>
+                    <td class="subject ITST-301">ITST 301</td>
+                    <td class="subject ITEP-309">ITEP 309</td>
                 </tr>
                 <tr>
                     <td class="time-col">4:00 - 5:00</td>
                     <td></td>
                     <td></td>
-                    <td class="subject course-ITEP">ITEP 310</td>
-                    <td class="subject course-ITEP">ITEP 310</td>
-                    <td class="subject course-ITST">ITST 301</td>
-                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td class="subject ITEP-310">ITEP 310</td>
+                    <td class="subject ITEP-310">ITEP 310</td>
+                    <td class="subject ITST-301">ITST 301</td>
+                    <td class="subject ITEP-309">ITEP 309</td>
                 </tr>
                 <tr>
                     <td class="time-col">5:00 - 6:00</td>
@@ -323,8 +339,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td class="subject course-ITST">ITST 301</td>
-                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td class="subject ITST-301">ITST 301</td>
+                    <td class="subject ITEP-309">ITEP 309</td>
                 </tr>
             </tbody>
         </table>
