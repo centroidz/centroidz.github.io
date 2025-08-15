@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Schedule | IT Department</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+            --success-color: #2ecc71;
+            --border-radius: 6px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        h1 {
+            color: var(--dark-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .subtitle {
+            color: #6c757d;
+            font-weight: 300;
+        }
+        
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .print-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .print-btn:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .print-btn i {
+            font-size: 16px;
+        }
+        
+        .legend {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            gap: 5px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .subject {
+            font-weight: 500;
+            border-radius: 4px;
+        }
+        
+        .course-ITEP { background-color: #d4edff; color: #0056b3; }
+        .course-ITEL { background-color: #e2f3e4; color: #155724; }
+        .course-ITST { background-color: #fff3cd; color: #856404; }
+        
+        .time-col {
+            font-weight: 500;
+            background-color: #f8f9fa;
+        }
+        
+        @media (max-width: 768px) {
+            th, td {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+            
+            .print-btn, .legend {
+                display: none;
+            }
+            
+            table {
+                box-shadow: none;
+            }
+            
+            th {
+                background-color: var(--primary-color) !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .subject {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Class Schedule</h1>
+            <p class="subtitle">Information Technology | 3C-WMAD</p>
+        </header>
+        
+        <div class="controls">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color course-ITEP"></div>
+                    <span>ITEP Courses</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color course-ITEL"></div>
+                    <span>ITEL Courses</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color course-ITST"></div>
+                    <span>ITST Courses</span>
+                </div>
+            </div>
+            
+            <button class="print-btn" onclick="window.print()">
+                <i>🖨️</i>
+                <span>Print Schedule</span>
+            </button>
+        </div>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                    <th>Saturday</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="time-col">8:00 - 9:00</td>
+                    <td></td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">9:00 - 10:00</td>
+                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">10:00 - 11:00</td>
+                    <td class="subject course-ITEL">ITEL 304</td>
+                    <td class="subject course-ITST">ITST 301</td>
+                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">11:00 - 12:00</td>
+                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td class="subject course-ITEP">ITEP 308</td>
+                    <td class="subject course-ITEL">ITEL 304</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">12:00 - 1:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">1:00 - 2:00</td>
+                    <td class="subject course-ITEP">ITEP 310</td>
+                    <td class="subject course-ITEL">ITEL 304</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">2:00 - 3:00</td>
+                    <td class="subject course-ITST">ITST 301</td>
+                    <td></td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 309</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="time-col">3:00 - 4:00</td>
+                    <td></td>
+                    <td></td>
+                    <td class="subject course-ITST">ITST 302</td>
+                    <td class="subject course-ITST">ITST 302</td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 309</td>
+                </tr>
+                <tr>
+                    <td class="time-col">4:00 - 5:00</td>
+                    <td></td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 310</td>
+                    <td class="subject course-ITEP">ITEP 310</td>
+                    <td></td>
+                    <td class="subject course-ITEP">ITEP 309</td>
+                </tr>
+                <tr>
+                    <td class="time-col">5:00 - 6:00</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td class="subject course-ITST">ITST 301</td>
+                    <td class="subject course-ITEP">ITEP 309</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
